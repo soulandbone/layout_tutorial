@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:layout_tutorial/lists/layout_options.dart';
 
-class StackScreen extends StatefulWidget {
-  const StackScreen({super.key});
+class StackScreen extends StatefulWidget implements HasLayoutGroup {
+  const StackScreen({super.key, required this.onLayoutToggle});
+
+  @override
+  final VoidCallback onLayoutToggle;
 
   @override
   State<StackScreen> createState() => _StackScreenState();

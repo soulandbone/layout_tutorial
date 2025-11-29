@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:layout_tutorial/lists/layout_options.dart';
 
-class ExpandedScreen extends StatelessWidget {
-  const ExpandedScreen({super.key});
+class ExpandedScreen extends StatelessWidget implements HasLayoutGroup {
+  const ExpandedScreen({super.key, required this.onLayoutToggle});
+
+  @override
+  final VoidCallback onLayoutToggle;
 
   @override
   Widget build(BuildContext context) {

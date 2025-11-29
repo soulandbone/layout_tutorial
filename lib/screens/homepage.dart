@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:layout_tutorial/lists/app_lists.dart';
 import 'package:layout_tutorial/lists/layout_options.dart';
-import 'package:layout_tutorial/widgets/main_app_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -33,11 +32,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MainAppBar(
-        onClick: changeLayoutGroup,
-        layoutGroup: layoutGroup,
-        layoutType: layoutTypeSelection,
-      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         backgroundColor: Colors.amber,
@@ -51,9 +45,7 @@ class _HomePageState extends State<HomePage> {
             ? AppLists.bottomNavItemsNonScrollable
             : AppLists.bottomNavItemsScrollable,
       ),
-      body: layoutGroup == LayoutGroup.nonScrollable
-          ? AppLists.screensNonScrollable[_currentIndex]
-          : AppLists.screensScrollable[_currentIndex],
+      body: AppLists.screens[layoutGroup]![_currentIndex](changeLayoutGroup),
     );
   }
 }

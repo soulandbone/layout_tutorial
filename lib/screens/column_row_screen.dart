@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:layout_tutorial/widgets/column_row/top_component.dart';
+import 'package:layout_tutorial/lists/layout_options.dart';
+import 'package:layout_tutorial/widgets/main_app_bar.dart';
 
-class ColumnRowScreen extends StatefulWidget {
-  const ColumnRowScreen({super.key});
+class ColumnRowScreen extends StatefulWidget implements HasLayoutGroup {
+  const ColumnRowScreen({super.key, required this.onLayoutToggle});
+
+  @override
+  final VoidCallback onLayoutToggle;
 
   @override
   State<ColumnRowScreen> createState() => _ColumnRowScreenState();
@@ -18,22 +22,11 @@ class _ColumnRowScreenState extends State<ColumnRowScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TopComponent(color: Colors.black),
-
-        isRow
-            ? Container(
-                decoration: BoxDecoration(color: Colors.amber),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  // crossAxisAlignment: CrossAxisAlignment.start,
-                  children: imageChildren,
-                ),
-              )
-            : Column(children: imageChildren),
-      ],
+    return Scaffold(
+      appBar: MainAppBar(
+        layoutType: LayoutType.rowColumn,
+        changeLayoutHandler: widget.onLayoutToggle,
+      ),
     );
   }
 }
