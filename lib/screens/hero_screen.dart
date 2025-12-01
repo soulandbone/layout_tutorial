@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:layout_tutorial/lists/layout_options.dart';
+import 'package:layout_tutorial/widgets/main_app_bar.dart';
 
 class HeroScreen extends StatelessWidget implements HasLayoutGroup {
   const HeroScreen({super.key, required this.onLayoutToggle});
@@ -9,6 +10,12 @@ class HeroScreen extends StatelessWidget implements HasLayoutGroup {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('This is the Hero Screen')));
+    return Scaffold(
+      appBar: MainAppBar(
+        layoutType: LayoutType.hero,
+        changeLayoutHandler: onLayoutToggle,
+      ),
+      body: Center(child: Text('This is the Hero Screen')),
+    );
   }
 }

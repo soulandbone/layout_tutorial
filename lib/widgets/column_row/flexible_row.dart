@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:layout_tutorial/widgets/column_row/toggle_back_forward.dart';
 
 class FlexibleRow extends StatelessWidget {
   const FlexibleRow({
     required this.flexLeft,
     required this.flexRight,
     required this.textLeft,
+    required this.onPress,
+    required this.textRight,
+    this.fontSize,
+
     super.key,
   });
 
   final int flexLeft;
   final int flexRight;
   final String textLeft;
+  final double? fontSize;
+  final Function(int) onPress;
+  final String textRight;
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +28,21 @@ class FlexibleRow extends StatelessWidget {
         children: [
           Expanded(
             flex: flexLeft,
-            child: Container(
-              decoration: BoxDecoration(color: Colors.amber),
-              child: Text(textLeft),
+            child: Text(
+              textAlign: TextAlign.start,
+              textLeft,
+              style: TextStyle(fontSize: fontSize ?? 12),
             ),
           ),
           Expanded(
             flex: flexRight,
-            child: Container(decoration: BoxDecoration(color: Colors.pink)),
+            child: Container(
+              decoration: BoxDecoration(color: Colors.pink),
+              child: ToggleBackForward(
+                textRight: textRight,
+                onPress: (value) => onPress(value),
+              ),
+            ),
           ),
         ],
       ),

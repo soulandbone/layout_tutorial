@@ -26,27 +26,16 @@ class AppLists {
     ],
   };
 
-  // static List<Widget> screensNonScrollable = [
-  //   ColumnRowScreen(onLayoutToggle: () {}),
-  //   StackScreen(),
-  //   ExpandedScreen(),
-  //   PaddingScreen(),
-  // ];
-
-  // static List<Widget> screensScrollable = [
-  //   PageViewScreen(),
-  //   ListViewScreen(),
-  //   SliversScreen(),
-  //   HeroScreen(),
-  // ];
-
   static List<BottomNavigationBarItem> bottomNavItemsNonScrollable = [
     BottomNavigationBarItem(label: 'Column/Row', icon: Icon(Icons.dehaze)),
     BottomNavigationBarItem(
       label: 'Stack',
       icon: FaIcon(FontAwesomeIcons.layerGroup),
     ),
-    BottomNavigationBarItem(label: 'Expanded', icon: Icon(Icons.crop_square)),
+    BottomNavigationBarItem(
+      label: 'Expanded',
+      icon: Icon(Icons.settings_overscan),
+    ),
     BottomNavigationBarItem(
       label: 'Padding',
       icon: Icon(Icons.expand_outlined),
@@ -54,12 +43,39 @@ class AppLists {
   ];
 
   static List<BottomNavigationBarItem> bottomNavItemsScrollable = [
-    BottomNavigationBarItem(label: 'PageView', icon: Icon(Icons.dehaze)),
+    BottomNavigationBarItem(label: 'PageView', icon: Icon(Icons.auto_stories)),
     BottomNavigationBarItem(
       label: 'ListView',
-      icon: FaIcon(FontAwesomeIcons.layerGroup),
+      icon: FaIcon(FontAwesomeIcons.list),
     ),
-    BottomNavigationBarItem(label: 'Slivers', icon: Icon(Icons.crop_square)),
+    BottomNavigationBarItem(
+      label: 'Slivers',
+      icon: Icon(Icons.density_small_outlined),
+    ),
     BottomNavigationBarItem(label: 'Hero', icon: Icon(Icons.expand_outlined)),
   ];
+
+  static List<MainAxisAlignment> mainAxisAlignmentList = [
+    MainAxisAlignment.start,
+    MainAxisAlignment.center,
+    MainAxisAlignment.end,
+    MainAxisAlignment.spaceAround,
+    MainAxisAlignment.spaceBetween,
+    MainAxisAlignment.spaceEvenly,
+  ];
+  static List<CrossAxisAlignment> crossAxisAlignmentList = [
+    CrossAxisAlignment.center,
+    CrossAxisAlignment.end,
+    CrossAxisAlignment.start,
+    CrossAxisAlignment.stretch,
+  ];
+
+  static Map<MainAxisAlignment, String> mainAxisAlignmentToStringMapper = {
+    MainAxisAlignment.spaceAround: 'spaceAround',
+    MainAxisAlignment.spaceBetween: 'spaceBetween',
+    MainAxisAlignment.spaceEvenly: 'spaceEvenly',
+    MainAxisAlignment.start: 'start',
+    MainAxisAlignment.center: 'center',
+    MainAxisAlignment.end: 'end',
+  };
 }

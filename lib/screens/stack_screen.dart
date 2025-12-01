@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:layout_tutorial/lists/layout_options.dart';
+import 'package:layout_tutorial/widgets/main_app_bar.dart';
 
 class StackScreen extends StatefulWidget implements HasLayoutGroup {
   const StackScreen({super.key, required this.onLayoutToggle});
@@ -14,6 +15,12 @@ class StackScreen extends StatefulWidget implements HasLayoutGroup {
 class _StackScreenState extends State<StackScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('this is the Stack Screen')));
+    return Scaffold(
+      appBar: MainAppBar(
+        layoutType: LayoutType.stack,
+        changeLayoutHandler: widget.onLayoutToggle,
+      ),
+      body: Center(child: Text('this is the Stack Screen')),
+    );
   }
 }

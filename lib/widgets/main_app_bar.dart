@@ -9,9 +9,9 @@ class MainAppBar extends AppBar {
     PreferredSize? bottom,
     required this.changeLayoutHandler,
   }) : super(
-         leading: Text(layoutNames[layoutType] ?? ''),
+         title: Text(layoutNames[layoutType] ?? ''),
          bottom: bottom,
-         title: Center(
+         leading: Center(
            child: IconButton(
              onPressed: changeLayoutHandler,
              icon: Icon(Icons.switch_access_shortcut),
