@@ -22,9 +22,7 @@ class ToggleBackForward extends StatelessWidget {
         children: [
           IconButton(
             icon: Icon(Icons.arrow_back),
-            onPressed: () {
-              onPress(-1); //to decrease in 1 step
-            },
+            onPressed: () => onPress(-1), //to decrease in 1 step
           ),
           Expanded(
             child: Align(
@@ -37,9 +35,7 @@ class ToggleBackForward extends StatelessWidget {
           ),
           IconButton(
             icon: Icon(Icons.arrow_forward),
-            onPressed: () {
-              onPress(1); //to increase in 1 step
-            },
+            onPressed: () => onPress(1), //to increase in 1 step
           ),
         ],
       ),

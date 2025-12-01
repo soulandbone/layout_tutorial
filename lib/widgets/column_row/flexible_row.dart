@@ -38,10 +38,7 @@ class FlexibleRow extends StatelessWidget {
             flex: flexRight,
             child: Container(
               decoration: BoxDecoration(color: Colors.pink),
-              child: ToggleBackForward(
-                textRight: textRight,
-                onPress: (value) => onPress(value),
-              ),
+              child: ToggleBackForward(textRight: textRight, onPress: onPress),
             ),
           ),
         ],

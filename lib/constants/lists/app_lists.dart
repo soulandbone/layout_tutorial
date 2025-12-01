@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:layout_tutorial/lists/layout_options.dart';
+import 'package:layout_tutorial/constants/lists/layout_options.dart';
+import 'package:layout_tutorial/constants/lists/strings/app_strings.dart';
 import 'package:layout_tutorial/screens/column_row_screen.dart';
 import 'package:layout_tutorial/screens/expanded_screen.dart';
 import 'package:layout_tutorial/screens/hero_screen.dart';
@@ -67,15 +68,20 @@ class AppLists {
     CrossAxisAlignment.center,
     CrossAxisAlignment.end,
     CrossAxisAlignment.start,
-    CrossAxisAlignment.stretch,
   ];
 
   static Map<MainAxisAlignment, String> mainAxisAlignmentToStringMapper = {
-    MainAxisAlignment.spaceAround: 'spaceAround',
-    MainAxisAlignment.spaceBetween: 'spaceBetween',
-    MainAxisAlignment.spaceEvenly: 'spaceEvenly',
-    MainAxisAlignment.start: 'start',
-    MainAxisAlignment.center: 'center',
-    MainAxisAlignment.end: 'end',
+    MainAxisAlignment.spaceAround: AppStrings.kSpaceAround,
+    MainAxisAlignment.spaceBetween: AppStrings.kSpaceBetween,
+    MainAxisAlignment.spaceEvenly: AppStrings.kSpaceEvenly,
+    MainAxisAlignment.start: AppStrings.kStart,
+    MainAxisAlignment.center: AppStrings.kCenter,
+    MainAxisAlignment.end: AppStrings.kEnd,
+  };
+
+  static Map<CrossAxisAlignment, String> crossAxisAlignmentToStringMapper = {
+    CrossAxisAlignment.start: AppStrings.kStart,
+    CrossAxisAlignment.center: AppStrings.kCenter,
+    CrossAxisAlignment.end: AppStrings.kEnd,
   };
 }

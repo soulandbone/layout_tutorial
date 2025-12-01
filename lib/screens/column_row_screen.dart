@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:layout_tutorial/lists/app_lists.dart';
-import 'package:layout_tutorial/lists/layout_options.dart';
+import 'package:layout_tutorial/constants/lists/app_lists.dart';
+import 'package:layout_tutorial/constants/lists/layout_options.dart';
 import 'package:layout_tutorial/widgets/column_row/top_component.dart';
 import 'package:layout_tutorial/widgets/main_app_bar.dart';
 
@@ -56,6 +56,13 @@ class _ColumnRowScreenState extends State<ColumnRowScreen> {
     });
   }
 
+  void onChangeCrossAxisAlignment(int increment) {
+    var length = AppLists.crossAxisAlignmentList.length;
+    setState(() {
+      crossAxisIndex = (crossAxisIndex + increment) % length;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,12 +77,14 @@ class _ColumnRowScreenState extends State<ColumnRowScreen> {
               mainAxisSizeString,
               AppLists.mainAxisAlignmentToStringMapper[AppLists
                   .mainAxisAlignmentList[mainAxisIndex]]!,
-              'Text3',
+              AppLists.crossAxisAlignmentToStringMapper[AppLists
+                  .crossAxisAlignmentList[crossAxisIndex]]!,
             ],
             onPressFunctions: [
               onChangeLayout,
               onChangeMainAxisSize,
               onChangeMainAxisAlignment,
+              onChangeCrossAxisAlignment,
             ],
             fontSize: 15,
             height: height,

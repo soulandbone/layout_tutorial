@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:layout_tutorial/constants/lists/strings/app_strings.dart';
 import 'package:layout_tutorial/widgets/column_row/flexible_row.dart';
 
 class TopComponent extends StatelessWidget {
@@ -34,7 +35,7 @@ class TopComponent extends StatelessWidget {
 
               flexLeft: 2,
               flexRight: 3,
-              textLeft: 'Layout',
+              textLeft: AppStrings.kLayout,
             ),
           ),
           Expanded(
@@ -45,27 +46,27 @@ class TopComponent extends StatelessWidget {
               fontSize: fontSize,
               flexLeft: 2,
               flexRight: 3,
-              textLeft: 'Main Axis Size',
+              textLeft: AppStrings.kMainAxisSize,
             ),
           ),
           Expanded(
             child: FlexibleRow(
               textRight: textSelections[2],
-              onPress: (value) => onPressFunctions[2](value),
+              onPress: onPressFunctions[2],
               fontSize: fontSize,
               flexLeft: 2,
               flexRight: 3,
-              textLeft: 'Main Axis Alignment',
+              textLeft: AppStrings.kMainAxisAlignment,
             ),
           ),
           Expanded(
             child: FlexibleRow(
               textRight: textSelections[3],
-              onPress: (value) => onPressFunctions[2](value),
+              onPress: onPressFunctions[3],
               fontSize: fontSize,
               flexLeft: 2,
               flexRight: 3,
-              textLeft: 'Cross Axis Alignment',
+              textLeft: AppStrings.kCrossAxisAlignment,
             ),
           ),
         ],

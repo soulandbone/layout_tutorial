@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:layout_tutorial/lists/app_lists.dart';
-import 'package:layout_tutorial/lists/layout_options.dart';
+import 'package:layout_tutorial/constants/lists/app_lists.dart';
+import 'package:layout_tutorial/constants/lists/layout_options.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
