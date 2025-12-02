@@ -23,8 +23,10 @@ class ListViewScreen extends StatelessWidget implements HasLayoutGroup {
       body: Center(
         child: ListView.builder(
           itemCount: AppLists.contacts.length,
-          itemBuilder: (context, index) =>
-              ContactTile(contact: AppLists.contacts[index]),
+          itemBuilder: (context, index) => Card(
+            color: Colors.black45,
+            child: ContactTile(contact: AppLists.contacts[index]),
+          ),
         ),
       ),
     );
@@ -35,7 +37,7 @@ class ContactTile extends ListTile {
   ContactTile({required this.contact, super.key})
     : super(
         leading: CircleAvatar(child: Text(contact.name[0])),
-        title: Text(contact.name),
+        title: Text(contact.name, style: TextStyle(color: AppColors.thistle)),
         subtitle: Text(contact.email),
       );
 

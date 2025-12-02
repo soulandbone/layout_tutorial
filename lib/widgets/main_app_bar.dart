@@ -28,7 +28,7 @@ class MainAppBar extends AppBar {
          backgroundColor: AppColors.copper,
          actions: [
            IconButton(
-             color: Colors.green,
+             color: AppColors.reddishBrown,
              onPressed: changeLayoutHandler,
              icon: Icon(Icons.change_circle),
            ),

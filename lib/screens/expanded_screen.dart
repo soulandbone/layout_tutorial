@@ -18,7 +18,24 @@ class ExpandedScreen extends StatelessWidget implements HasLayoutGroup {
         layoutType: LayoutType.expanded,
         changeLayoutHandler: onLayoutToggle,
       ),
-      body: Center(child: Text('This is the Expanded Screen')),
+      body: Column(
+        children: [
+          Expanded(
+            child: Container(
+              width: double.infinity,
+              decoration: BoxDecoration(color: Colors.pink),
+              child: Center(child: Text('Container 1')),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              width: double.infinity,
+              decoration: BoxDecoration(color: Colors.blue),
+              child: Center(child: Text('Container 2')),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
