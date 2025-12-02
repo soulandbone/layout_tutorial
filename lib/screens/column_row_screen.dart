@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:layout_tutorial/constants/app_colors.dart';
 import 'package:layout_tutorial/constants/lists/app_lists.dart';
 import 'package:layout_tutorial/constants/lists/layout_options.dart';
 import 'package:layout_tutorial/widgets/column_row/top_component.dart';
@@ -66,7 +67,9 @@ class _ColumnRowScreenState extends State<ColumnRowScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.inkBlack,
       appBar: MainAppBar(
+        layoutGroup: LayoutGroup.nonScrollable,
         layoutType: LayoutType.rowColumn,
         changeLayoutHandler: widget.onLayoutToggle,
         bottom: PreferredSize(

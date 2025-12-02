@@ -31,6 +31,7 @@ class PageViewScreen extends StatelessWidget implements HasLayoutGroup {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MainAppBar(
+        layoutGroup: LayoutGroup.scrollable,
         layoutType: LayoutType.pageView,
         changeLayoutHandler: onLayoutToggle,
       ),

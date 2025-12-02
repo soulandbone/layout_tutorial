@@ -28,3 +28,9 @@ Map<LayoutType, String> layoutNames = {
   LayoutType.slivers: 'Slivers',
   LayoutType.hero: 'Hero',
 };
+
+String getLayoutGroupName(LayoutGroup layoutGroup) {
+  return layoutGroup == LayoutGroup.nonScrollable
+      ? 'Non-Scrollable'
+      : 'Scrollable';
+}

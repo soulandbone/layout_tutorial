@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:layout_tutorial/constants/app_colors.dart';
 import 'package:layout_tutorial/constants/lists/app_lists.dart';
 import 'package:layout_tutorial/constants/lists/layout_options.dart';
 
@@ -33,8 +34,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: AppColors.reddishBrown,
         currentIndex: _currentIndex,
-        backgroundColor: Colors.amber,
+        backgroundColor: AppColors.thistle,
         type: BottomNavigationBarType.fixed,
         onTap: (value) {
           setState(() {

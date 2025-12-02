@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:layout_tutorial/constants/app_colors.dart';
 import 'package:layout_tutorial/constants/lists/layout_options.dart';
 
 class MainAppBar extends AppBar {
@@ -6,19 +7,35 @@ class MainAppBar extends AppBar {
     super.key,
 
     required this.layoutType,
+    required this.layoutGroup,
     PreferredSize? bottom,
     required this.changeLayoutHandler,
   }) : super(
-         title: Text(layoutNames[layoutType] ?? ''),
-         bottom: bottom,
-         leading: Center(
-           child: IconButton(
-             onPressed: changeLayoutHandler,
-             icon: Icon(Icons.switch_access_shortcut),
+         title: Center(
+           child: Row(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: [
+               Text(layoutNames[layoutType] ?? ''),
+               Text('   '),
+               Text(
+                 getLayoutGroupName(layoutGroup),
+                 style: TextStyle(fontSize: 12, fontStyle: FontStyle.italic),
+               ),
+             ],
            ),
          ),
+         bottom: bottom,
+         backgroundColor: AppColors.copper,
+         actions: [
+           IconButton(
+             color: Colors.green,
+             onPressed: changeLayoutHandler,
+             icon: Icon(Icons.change_circle),
+           ),
+         ],
        );
 
   final LayoutType layoutType;
   final VoidCallback changeLayoutHandler;
+  final LayoutGroup layoutGroup;
 }

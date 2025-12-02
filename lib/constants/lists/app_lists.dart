@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:layout_tutorial/constants/lists/layout_options.dart';
 import 'package:layout_tutorial/constants/lists/strings/app_strings.dart';
+import 'package:layout_tutorial/models/contact.dart';
 import 'package:layout_tutorial/screens/column_row_screen.dart';
 import 'package:layout_tutorial/screens/expanded_screen.dart';
 import 'package:layout_tutorial/screens/hero_screen.dart';
@@ -84,4 +85,41 @@ class AppLists {
     CrossAxisAlignment.center: AppStrings.kCenter,
     CrossAxisAlignment.end: AppStrings.kEnd,
   };
+
+  static List<Contact> contacts = [
+    Contact(name: 'Joan Doe', email: 'joanDoe@gmail.com'),
+    Contact(name: 'Alice Smith', email: 'aliceSmith@gmail.com'),
+    Contact(name: 'Bob Johnson', email: 'bobJohnson@gmail.com'),
+    Contact(name: 'Carol Williams', email: 'carolWilliams@gmail.com'),
+    Contact(name: 'David Brown', email: 'davidBrown@gmail.com'),
+    Contact(name: 'Eva Davis', email: 'evaDavis@gmail.com'),
+    Contact(name: 'Frank Miller', email: 'frankMiller@gmail.com'),
+    Contact(name: 'Grace Wilson', email: 'graceWilson@gmail.com'),
+    Contact(name: 'Henry Moore', email: 'henryMoore@gmail.com'),
+    Contact(name: 'Isabella Taylor', email: 'isabellaTaylor@gmail.com'),
+    Contact(name: 'James Anderson', email: 'jamesAnderson@gmail.com'),
+    Contact(name: 'Kate Thomas', email: 'kateThomas@gmail.com'),
+    Contact(name: 'Liam Jackson', email: 'liamJackson@gmail.com'),
+    Contact(name: 'Mia White', email: 'miaWhite@gmail.com'),
+    Contact(name: 'Noah Harris', email: 'noahHarris@gmail.com'),
+    Contact(name: 'Olivia Martin', email: 'oliviaMartin@gmail.com'),
+    Contact(name: 'Paul Thompson', email: 'paulThompson@gmail.com'),
+    Contact(name: 'Quinn Garcia', email: 'quinnGarcia@gmail.com'),
+    Contact(name: 'Rachel Martinez', email: 'rachelMartinez@gmail.com'),
+    Contact(name: 'Samuel Robinson', email: 'samuelRobinson@gmail.com'),
+    Contact(name: 'Tina Clark', email: 'tinaClark@gmail.com'),
+    Contact(name: 'Uma Rodriguez', email: 'umaRodriguez@gmail.com'),
+    Contact(name: 'Victor Lewis', email: 'victorLewis@gmail.com'),
+    Contact(name: 'Wendy Lee', email: 'wendyLee@gmail.com'),
+    Contact(name: 'Xavier Walker', email: 'xavierWalker@gmail.com'),
+    Contact(name: 'Yara Hall', email: 'yaraHall@gmail.com'),
+    Contact(name: 'Zachary Allen', email: 'zacharyAllen@gmail.com'),
+    Contact(name: 'Abigail Young', email: 'abigailYoung@gmail.com'),
+    Contact(name: 'Benjamin King', email: 'benjaminKing@gmail.com'),
+    Contact(name: 'Cynthia Wright', email: 'cynthiaWright@gmail.com'),
+    Contact(name: 'Daniel Scott', email: 'danielScott@gmail.com'),
+    Contact(name: 'Emily Torres', email: 'emilyTorres@gmail.com'),
+    Contact(name: 'Felix Nguyen', email: 'felixNguyen@gmail.com'),
+    Contact(name: 'Gina Hill', email: 'ginaHill@gmail.com'),
+  ];
 }
