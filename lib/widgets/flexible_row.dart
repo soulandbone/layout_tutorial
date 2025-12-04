@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:layout_tutorial/widgets/column_row/toggle_back_forward.dart';
+import 'package:layout_tutorial/widgets/toggle_back_forward.dart';
 
 class FlexibleRow extends StatelessWidget {
   const FlexibleRow({
@@ -38,7 +38,11 @@ class FlexibleRow extends StatelessWidget {
             flex: flexRight,
             child: Container(
               decoration: BoxDecoration(color: Colors.pink),
-              child: ToggleBackForward(textRight: textRight, onPress: onPress),
+              child: ToggleBackForward(
+                textRight: textRight,
+                onPress: onPress,
+                horizontalMargin: 35,
+              ),
             ),
           ),
         ],

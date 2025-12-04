@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:layout_tutorial/constants/lists/strings/app_strings.dart';
-import 'package:layout_tutorial/widgets/column_row/flexible_row.dart';
+import 'package:layout_tutorial/widgets/flexible_row.dart';
 
 class TopComponent extends StatelessWidget {
   const TopComponent({

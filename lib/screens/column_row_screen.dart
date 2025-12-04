@@ -16,7 +16,7 @@ class ColumnRowScreen extends StatefulWidget implements HasLayoutGroup {
 }
 
 class _ColumnRowScreenState extends State<ColumnRowScreen> {
-  final double height = 160;
+  final double height = 120;
 
   //START OF STATE VARIABLES
   bool isRow = true;
