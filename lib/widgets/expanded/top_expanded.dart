@@ -1,20 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:layout_tutorial/widgets/flexible_row.dart';
 import 'package:layout_tutorial/widgets/toggle_back_forward.dart';
 
 class TopExpanded extends StatelessWidget {
-  const TopExpanded({
+  TopExpanded({
     required this.labelColumnTop,
     required this.labelColumnBottom,
     required this.height,
     required this.onPressFunctions,
+    required this.labelRowFirst,
+    required this.labelRowSecond,
+    required this.labelRowThird,
     super.key,
   });
 
   final String labelColumnTop;
   final String labelColumnBottom;
+  final String labelRowFirst;
+  final String labelRowSecond;
+  final String labelRowThird;
   final double height;
   final List<Function(int)> onPressFunctions;
+
+  final TextStyle titlesTop = TextStyle(
+    fontSize: 14,
+    fontStyle: FontStyle.italic,
+  );
+
+  final TextStyle titlesSide = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +38,43 @@ class TopExpanded extends StatelessWidget {
       child: Column(
         children: [
           Expanded(
-            flex: 2,
             child: Row(
-              mainAxisSize: MainAxisSize.min,
+              children: [
+                Expanded(flex: 1, child: SizedBox()),
+                Expanded(
+                  flex: 3,
+                  child: SizedBox(
+                    child: Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Text('Top', style: titlesTop),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Text('Bottom', style: titlesTop),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Row(
               children: [
                 Expanded(
                   flex: 1,
-                  child: Container(
-                    decoration: BoxDecoration(color: Colors.orange),
-                    child: Text('Horizontal Flex'),
+                  child: SizedBox(
+                    child: Text('Horizontal Flex', style: titlesSide),
                   ),
                 ),
                 Expanded(
@@ -42,14 +85,14 @@ class TopExpanded extends StatelessWidget {
                         Expanded(
                           child: ToggleBackForward(
                             horizontalMargin: 0,
-                            onPress: onPressFunctions[0], // onUpdateTop
+                            onPress: onPressFunctions[0], // updateTop
                             textRight: labelColumnTop,
                           ),
                         ),
                         Expanded(
                           child: ToggleBackForward(
                             horizontalMargin: 0,
-                            onPress: onPressFunctions[1],
+                            onPress: onPressFunctions[1], //updateBottom
                             textRight: labelColumnBottom,
                           ),
                         ),
@@ -61,12 +104,82 @@ class TopExpanded extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: FlexibleRow(
-              flexLeft: 2,
-              flexRight: 3,
-              textLeft: 'Flex-BottomColumn',
-              onPress: (value) {},
-              textRight: 'textRight',
+            child: Row(
+              children: [
+                Expanded(flex: 1, child: SizedBox()),
+                Expanded(
+                  flex: 3,
+                  child: SizedBox(
+                    child: Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Text('First', style: titlesTop),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Text('Second', style: titlesTop),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Text('Third', style: titlesTop),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: SizedBox(
+                    child: Text('Vertical Flex', style: titlesSide),
+                  ),
+                ),
+                Expanded(
+                  flex: 3,
+                  child: SizedBox(
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: ToggleBackForward(
+                            horizontalMargin: 0,
+                            onPress: onPressFunctions[2], // updateFirst
+                            textRight: labelRowFirst,
+                          ),
+                        ),
+                        Expanded(
+                          child: ToggleBackForward(
+                            horizontalMargin: 0,
+                            onPress: onPressFunctions[3], //updateSecond
+                            textRight: labelRowSecond,
+                          ),
+                        ),
+                        Expanded(
+                          child: ToggleBackForward(
+                            horizontalMargin: 0,
+                            onPress: onPressFunctions[4], //updateThird
+                            textRight: labelRowThird,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ],

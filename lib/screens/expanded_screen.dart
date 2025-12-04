@@ -15,9 +15,12 @@ class ExpandedScreen extends StatefulWidget implements HasLayoutGroup {
 }
 
 class _ExpandedScreenState extends State<ExpandedScreen> {
-  final double height = 80;
+  final double height = 120;
   int flexTopContainerIndex = 0;
   int flexBottomContainerIndex = 0;
+  int flexFirstContainerIndex = 0;
+  int flexSecondContainerIndex = 0;
+  int flexThirdContainerIndex = 0;
 
   List<int> flexValues = [1, 2, 3, 4];
 
@@ -35,6 +38,27 @@ class _ExpandedScreenState extends State<ExpandedScreen> {
     });
   }
 
+  void updateFirst(int increment) {
+    setState(() {
+      flexFirstContainerIndex =
+          (flexFirstContainerIndex + increment) % flexValues.length;
+    });
+  }
+
+  void updateSecond(int increment) {
+    setState(() {
+      flexSecondContainerIndex =
+          (flexSecondContainerIndex + increment) % flexValues.length;
+    });
+  }
+
+  void updateThird(int increment) {
+    setState(() {
+      flexThirdContainerIndex =
+          (flexThirdContainerIndex + increment) % flexValues.length;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,9 +70,18 @@ class _ExpandedScreenState extends State<ExpandedScreen> {
         bottom: PreferredSize(
           preferredSize: Size(0, height),
           child: TopExpanded(
-            onPressFunctions: [updateTop, updateBottom],
+            onPressFunctions: [
+              updateTop,
+              updateBottom,
+              updateFirst,
+              updateSecond,
+              updateThird,
+            ],
             labelColumnTop: flexValues[flexTopContainerIndex].toString(),
             labelColumnBottom: flexValues[flexBottomContainerIndex].toString(),
+            labelRowFirst: flexValues[flexFirstContainerIndex].toString(),
+            labelRowSecond: flexValues[flexSecondContainerIndex].toString(),
+            labelRowThird: flexValues[flexThirdContainerIndex].toString(),
             height: height,
           ),
         ),
@@ -63,8 +96,10 @@ class _ExpandedScreenState extends State<ExpandedScreen> {
             flex: flexValues[flexBottomContainerIndex],
             child: Container(
               width: double.infinity,
-              decoration: BoxDecoration(color: Colors.green),
-              child: Center(child: Text('Bottom Container')),
+              decoration: BoxDecoration(color: AppColors.dustyTaupe),
+              child: Center(
+                child: Text('Bottom Container', style: TextStyle(fontSize: 22)),
+              ),
             ),
           ),
         ],
@@ -77,27 +112,36 @@ class _ExpandedScreenState extends State<ExpandedScreen> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Expanded(
-          flex: 1,
+          flex: flexValues[flexFirstContainerIndex],
           child: Container(
             alignment: Alignment.center,
-            decoration: BoxDecoration(color: Colors.purple),
-            child: Text('1', style: TextStyle(fontSize: 26)),
+            decoration: BoxDecoration(color: AppColors.mutedGold),
+            child: Text(
+              flexValues[flexFirstContainerIndex].toString(),
+              style: TextStyle(fontSize: 26),
+            ),
           ),
         ),
         Expanded(
-          flex: 2,
+          flex: flexValues[flexSecondContainerIndex],
           child: Container(
             alignment: Alignment.center,
-            color: Colors.amberAccent,
-            child: Text('2', style: TextStyle(fontSize: 26)),
+            color: AppColors.creamyBeige,
+            child: Text(
+              flexValues[flexSecondContainerIndex].toString(),
+              style: TextStyle(fontSize: 26),
+            ),
           ),
         ),
         Expanded(
-          flex: 3,
+          flex: flexValues[flexThirdContainerIndex],
           child: Container(
             alignment: Alignment.center,
-            color: Colors.blueAccent,
-            child: Text('3', style: TextStyle(fontSize: 26)),
+            color: AppColors.slateBlue,
+            child: Text(
+              flexValues[flexThirdContainerIndex].toString(),
+              style: TextStyle(fontSize: 26),
+            ),
           ),
         ),
       ],

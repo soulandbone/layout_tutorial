@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:layout_tutorial/constants/app_colors.dart';
 import 'package:layout_tutorial/constants/lists/layout_options.dart';
 import 'package:layout_tutorial/widgets/main_app_bar.dart';
 
@@ -19,10 +20,10 @@ class PageViewScreen extends StatelessWidget implements HasLayoutGroup {
   Widget _buildPageView() {
     return PageView(
       children: [
-        _buildPage(index: 1, color: Colors.red),
-        _buildPage(index: 2, color: Colors.purple),
-        _buildPage(index: 3, color: Colors.green),
-        _buildPage(index: 4, color: Colors.pink),
+        _buildPage(index: 1, color: AppColors.burntSienna),
+        _buildPage(index: 2, color: AppColors.dustyRose),
+        _buildPage(index: 3, color: AppColors.mutedSageGreen),
+        _buildPage(index: 4, color: AppColors.charcoal),
       ],
     );
   }
