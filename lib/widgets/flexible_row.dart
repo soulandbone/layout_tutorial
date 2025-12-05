@@ -7,6 +7,8 @@ class FlexibleRow extends StatelessWidget {
     required this.flexRight,
     required this.textLeft,
     required this.onPress,
+    this.colorLeft,
+    this.colorRight,
     required this.textRight,
     this.fontSize,
 
@@ -17,13 +19,15 @@ class FlexibleRow extends StatelessWidget {
   final int flexRight;
   final String textLeft;
   final double? fontSize;
+  final Color? colorLeft;
+  final Color? colorRight;
   final Function(int) onPress;
   final String textRight;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(color: Colors.blue),
+      decoration: BoxDecoration(color: colorLeft),
       child: Row(
         children: [
           Expanded(
@@ -37,7 +41,7 @@ class FlexibleRow extends StatelessWidget {
           Expanded(
             flex: flexRight,
             child: Container(
-              decoration: BoxDecoration(color: Colors.pink),
+              decoration: BoxDecoration(color: colorRight),
               child: ToggleBackForward(
                 textRight: textRight,
                 onPress: onPress,

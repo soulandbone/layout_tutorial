@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:layout_tutorial/constants/app_colors.dart';
 import 'package:layout_tutorial/constants/lists/app_lists.dart';
 import 'package:layout_tutorial/constants/lists/layout_options.dart';
@@ -25,10 +26,10 @@ class _ColumnRowScreenState extends State<ColumnRowScreen> {
   int crossAxisIndex = 0;
   // END OF STATE VARIABLES
 
-  final List<Widget> imageChildren = [
-    Image.asset('assets/robot_32.png'),
-    Image.asset('assets/robot_128.png'),
-    Image.asset('assets/robot_32.png'),
+  final List<Widget> iconsChildren = [
+    FaIcon(FontAwesomeIcons.lifeRing, size: 64),
+    FaIcon(FontAwesomeIcons.ring, size: 128),
+    FaIcon(FontAwesomeIcons.lifeRing, size: 64),
   ];
 
   String get isRowString => isRow ? 'Row' : 'Column';
@@ -91,14 +92,14 @@ class _ColumnRowScreenState extends State<ColumnRowScreen> {
             ],
             fontSize: 15,
             height: height,
-            colorLeft: Colors.blue,
-            colorRight: Colors.amber,
+            colorLeft: AppColors.burntSienna,
+            colorRight: AppColors.dustyRose,
           ),
         ),
       ),
 
       body: Container(
-        decoration: BoxDecoration(color: Colors.green),
+        decoration: BoxDecoration(color: AppColors.creamyBeige),
         child: isRow
             ? Row(
                 mainAxisSize: mainAxisSize,
@@ -106,7 +107,7 @@ class _ColumnRowScreenState extends State<ColumnRowScreen> {
                     AppLists.mainAxisAlignmentList[mainAxisIndex],
                 crossAxisAlignment:
                     AppLists.crossAxisAlignmentList[crossAxisIndex],
-                children: imageChildren,
+                children: iconsChildren,
               )
             : Column(
                 mainAxisSize: mainAxisSize,
@@ -114,7 +115,7 @@ class _ColumnRowScreenState extends State<ColumnRowScreen> {
                     AppLists.mainAxisAlignmentList[mainAxisIndex],
                 crossAxisAlignment:
                     AppLists.crossAxisAlignmentList[crossAxisIndex],
-                children: imageChildren,
+                children: iconsChildren,
               ),
       ),
     );

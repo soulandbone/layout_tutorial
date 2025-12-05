@@ -4,8 +4,8 @@ import 'package:layout_tutorial/widgets/flexible_row.dart';
 
 class TopComponent extends StatelessWidget {
   const TopComponent({
-    required this.colorLeft,
-    required this.colorRight,
+    this.colorLeft = Colors.blue,
+    this.colorRight = Colors.pink,
     required this.height,
     this.fontSize,
     required this.onPressFunctions,
@@ -14,8 +14,8 @@ class TopComponent extends StatelessWidget {
     super.key,
   });
 
-  final Color colorLeft;
-  final Color colorRight;
+  final Color? colorLeft;
+  final Color? colorRight;
   final double height;
   final double? fontSize;
   final List<Function(int)> onPressFunctions;
@@ -29,6 +29,8 @@ class TopComponent extends StatelessWidget {
         children: [
           Expanded(
             child: FlexibleRow(
+              colorLeft: colorLeft,
+              colorRight: colorRight,
               textRight: textSelections[0], // Row / Column String
               onPress: onPressFunctions[0], // onChangeLayout function
               fontSize: fontSize,
@@ -40,6 +42,8 @@ class TopComponent extends StatelessWidget {
           ),
           Expanded(
             child: FlexibleRow(
+              colorLeft: colorLeft,
+              colorRight: colorRight,
               textRight:
                   textSelections[1], // MainAxisSize.min or MainAxisSize.max String
               onPress: onPressFunctions[1], // onChangeMainAxisSize
@@ -51,6 +55,8 @@ class TopComponent extends StatelessWidget {
           ),
           Expanded(
             child: FlexibleRow(
+              colorLeft: colorLeft,
+              colorRight: colorRight,
               textRight: textSelections[2],
               onPress: onPressFunctions[2],
               fontSize: fontSize,
@@ -61,6 +67,8 @@ class TopComponent extends StatelessWidget {
           ),
           Expanded(
             child: FlexibleRow(
+              colorLeft: colorLeft,
+              colorRight: colorRight,
               textRight: textSelections[3],
               onPress: onPressFunctions[3],
               fontSize: fontSize,
