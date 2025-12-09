@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:layout_tutorial/constants/lists/layout_options.dart';
-import 'package:layout_tutorial/constants/lists/strings/app_strings.dart';
+import 'package:layout_tutorial/constants/layout_options.dart';
+import 'package:layout_tutorial/constants/app_strings.dart';
 import 'package:layout_tutorial/models/contact.dart';
 import 'package:layout_tutorial/screens/column_row_screen.dart';
 import 'package:layout_tutorial/screens/expanded_screen.dart';
@@ -121,5 +121,22 @@ class AppLists {
     Contact(name: 'Emily Torres', email: 'emilyTorres@gmail.com'),
     Contact(name: 'Felix Nguyen', email: 'felixNguyen@gmail.com'),
     Contact(name: 'Gina Hill', email: 'ginaHill@gmail.com'),
+  ];
+
+  static const List<String> desertImagesUrls = [
+    'assets/desert_2.jpg',
+    'assets/desert_3.jpg',
+    'assets/desert_4.jpg',
+    'assets/desert_5.jpg',
+    'assets/desert_6.jpg',
+    'assets/desert_7.jpg',
+    'assets/desert_8.jpg',
+    'assets/desert_9.jpg',
+    'assets/desert_10.jpg',
+    'assets/desert_11.jpg',
+    'assets/desert_12.jpg',
+    'assets/desert_13.jpg',
+    'assets/desert_14.jpg',
+    'assets/desert_15.jpg',
   ];
 }

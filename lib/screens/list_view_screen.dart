@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:layout_tutorial/constants/app_colors.dart';
-import 'package:layout_tutorial/constants/lists/app_lists.dart';
-import 'package:layout_tutorial/constants/lists/layout_options.dart';
+import 'package:layout_tutorial/constants/app_lists.dart';
+import 'package:layout_tutorial/constants/layout_options.dart';
 import 'package:layout_tutorial/models/contact.dart';
 import 'package:layout_tutorial/widgets/main_app_bar.dart';
 

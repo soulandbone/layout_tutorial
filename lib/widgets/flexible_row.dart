@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:layout_tutorial/constants/app_styles.dart';
 import 'package:layout_tutorial/widgets/toggle_back_forward.dart';
 
 class FlexibleRow extends StatelessWidget {
@@ -7,22 +8,32 @@ class FlexibleRow extends StatelessWidget {
     required this.flexRight,
     required this.textLeft,
     required this.onPress,
+    required this.textStyle,
     this.colorLeft,
     this.colorRight,
+
     required this.textRight,
-    this.fontSize,
+
+    this.margin,
 
     super.key,
   });
 
+  //****************** LEFT PARAMETERS
   final int flexLeft;
-  final int flexRight;
   final String textLeft;
-  final double? fontSize;
   final Color? colorLeft;
-  final Color? colorRight;
-  final Function(int) onPress;
+
+  //********************* RIGHT PARAMETERS
+  final int flexRight;
   final String textRight;
+  final Color? colorRight;
+
+  //*********************************** */
+
+  final double? margin;
+  final Function(int) onPress;
+  final TextStyle textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +43,13 @@ class FlexibleRow extends StatelessWidget {
         children: [
           Expanded(
             flex: flexLeft,
-            child: Text(
-              textAlign: TextAlign.start,
-              textLeft,
-              style: TextStyle(fontSize: fontSize ?? 12),
+            child: Padding(
+              padding: EdgeInsets.only(left: AppStyles.marginleft),
+              child: Text(
+                textAlign: TextAlign.start,
+                textLeft,
+                style: textStyle,
+              ),
             ),
           ),
           Expanded(
@@ -45,7 +59,7 @@ class FlexibleRow extends StatelessWidget {
               child: ToggleBackForward(
                 textRight: textRight,
                 onPress: onPress,
-                horizontalMargin: 35,
+                horizontalMargin: margin ?? 0,
               ),
             ),
           ),

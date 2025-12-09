@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:layout_tutorial/constants/app_colors.dart';
-import 'package:layout_tutorial/constants/lists/layout_options.dart';
+import 'package:layout_tutorial/constants/layout_options.dart';
 import 'package:layout_tutorial/widgets/main_app_bar.dart';
 
 class StackScreen extends StatefulWidget implements HasLayoutGroup {
@@ -35,7 +35,7 @@ class _StackScreenState extends State<StackScreen> {
               alignment: Alignment.bottomRight,
               width: 300,
               height: 300,
-              decoration: BoxDecoration(color: Colors.purpleAccent),
+              decoration: BoxDecoration(color: AppColors.burntSienna),
               child: Text(
                 'Bottom',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -49,7 +49,7 @@ class _StackScreenState extends State<StackScreen> {
                 alignment: Alignment.bottomRight,
                 width: 200,
                 height: 200,
-                decoration: BoxDecoration(color: Colors.blue),
+                decoration: BoxDecoration(color: AppColors.slateBlue),
                 child: Text(
                   'Middle',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -60,7 +60,7 @@ class _StackScreenState extends State<StackScreen> {
               alignment: Alignment.bottomRight,
               height: 100,
               width: 100,
-              decoration: BoxDecoration(color: Colors.amber),
+              decoration: BoxDecoration(color: AppColors.softLavender),
               child: Text(
                 'Top',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),

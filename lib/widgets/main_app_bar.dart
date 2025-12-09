@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:layout_tutorial/constants/app_colors.dart';
-import 'package:layout_tutorial/constants/lists/layout_options.dart';
+import 'package:layout_tutorial/constants/layout_options.dart';
 
 class MainAppBar extends AppBar {
   MainAppBar({

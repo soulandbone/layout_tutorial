@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:layout_tutorial/constants/app_colors.dart';
-import 'package:layout_tutorial/constants/lists/layout_options.dart';
+import 'package:layout_tutorial/constants/layout_options.dart';
 import 'package:layout_tutorial/widgets/main_app_bar.dart';
 
 class SliversScreen extends StatelessWidget implements HasLayoutGroup {
@@ -11,22 +11,33 @@ class SliversScreen extends StatelessWidget implements HasLayoutGroup {
 
   @override
   Widget build(BuildContext context) {
+    List<Color> rotatingColors = [
+      AppColors.creamyBeige,
+      AppColors.dustyTaupe,
+      AppColors.charcoal,
+      AppColors.mutedGold,
+      AppColors.slateBlue,
+    ];
+
+    List<Color> rotatingColors2 = [
+      AppColors.dustyRose,
+      AppColors.mauve,
+      AppColors.mutedSageGreen,
+      AppColors.reddishBrown,
+      AppColors.softLavender,
+      AppColors.thistle,
+    ];
+
     return Scaffold(
       backgroundColor: AppColors.inkBlack,
       appBar: MainAppBar(
-        layoutGroup: LayoutGroup.scrollable,
         layoutType: LayoutType.slivers,
-        changeLayoutHandler: onLayoutToggle,
+        layoutGroup: LayoutGroup.scrollable,
+        changeLayoutHandler: () {},
       ),
       body: Center(
         child: CustomScrollView(
           slivers: <Widget>[
-            SliverAppBar(
-              backgroundColor: AppColors.dustyTaupe,
-              pinned: true,
-              expandedHeight: 150.0,
-              flexibleSpace: FlexibleSpaceBar(title: Text('Sliver AppBar')),
-            ),
             SliverGrid(
               gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: 200.0,
@@ -40,7 +51,7 @@ class SliversScreen extends StatelessWidget implements HasLayoutGroup {
               ) {
                 return Container(
                   alignment: Alignment.center,
-                  color: Colors.teal[100 * (index % 9)],
+                  color: rotatingColors[index % rotatingColors.length],
                   child: Text('Grid Item $index'),
                 );
               }, childCount: 20),
@@ -53,7 +64,7 @@ class SliversScreen extends StatelessWidget implements HasLayoutGroup {
               ) {
                 return Container(
                   alignment: Alignment.center,
-                  color: Colors.lightBlue[100 * (index % 9)],
+                  color: rotatingColors2[index % rotatingColors2.length],
                   child: Text('List Item $index'),
                 );
               }),
@@ -64,3 +75,18 @@ class SliversScreen extends StatelessWidget implements HasLayoutGroup {
     );
   }
 }
+
+
+// MainAppBar(
+//         layoutGroup: LayoutGroup.scrollable,
+//         layoutType: LayoutType.slivers,
+//         changeLayoutHandler: onLayoutToggle,
+//       ),
+
+
+// SliverAppBar(
+//               backgroundColor: AppColors.burntSienna,
+//               pinned: true,
+//               expandedHeight: 150.0,
+//               flexibleSpace: FlexibleSpaceBar(title: Text('Sliver AppBar')),
+//             )

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:layout_tutorial/constants/app_colors.dart';
-import 'package:layout_tutorial/constants/lists/app_lists.dart';
-import 'package:layout_tutorial/constants/lists/layout_options.dart';
+import 'package:layout_tutorial/constants/app_lists.dart';
+import 'package:layout_tutorial/constants/layout_options.dart';
 import 'package:layout_tutorial/widgets/column_row/top_component.dart';
 import 'package:layout_tutorial/widgets/main_app_bar.dart';
 
@@ -27,7 +27,7 @@ class _ColumnRowScreenState extends State<ColumnRowScreen> {
   // END OF STATE VARIABLES
 
   final List<Widget> iconsChildren = [
-    FaIcon(FontAwesomeIcons.lifeRing, size: 64),
+    FaIcon(FontAwesomeIcons.lifeRing, size: 60),
     FaIcon(FontAwesomeIcons.ring, size: 128),
     FaIcon(FontAwesomeIcons.lifeRing, size: 64),
   ];
@@ -90,16 +90,15 @@ class _ColumnRowScreenState extends State<ColumnRowScreen> {
               onChangeMainAxisAlignment,
               onChangeCrossAxisAlignment,
             ],
-            fontSize: 15,
             height: height,
-            colorLeft: AppColors.burntSienna,
-            colorRight: AppColors.dustyRose,
+            colorLeft: AppColors.slateBlue,
+            colorRight: AppColors.creamyBeige,
           ),
         ),
       ),
 
       body: Container(
-        decoration: BoxDecoration(color: AppColors.creamyBeige),
+        decoration: BoxDecoration(color: AppColors.reddishBrown),
         child: isRow
             ? Row(
                 mainAxisSize: mainAxisSize,

@@ -19,8 +19,7 @@ class ToggleBackForward extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: horizontalMargin),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
             child: IconButton(

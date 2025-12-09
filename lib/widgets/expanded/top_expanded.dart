@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:layout_tutorial/constants/app_styles.dart';
 import 'package:layout_tutorial/widgets/toggle_back_forward.dart';
 
 class TopExpanded extends StatelessWidget {
@@ -26,13 +27,10 @@ class TopExpanded extends StatelessWidget {
     fontStyle: FontStyle.italic,
   );
 
-  final TextStyle titlesSide = TextStyle(
-    fontSize: 18,
-    fontWeight: FontWeight.bold,
-  );
-
   @override
   Widget build(BuildContext context) {
+    final TextStyle textStyle = AppStyles.topLeftTitlesStyle;
+
     return SizedBox(
       height: height,
       child: Column(
@@ -40,9 +38,9 @@ class TopExpanded extends StatelessWidget {
           Expanded(
             child: Row(
               children: [
-                Expanded(flex: 1, child: SizedBox()),
+                Expanded(flex: 3, child: SizedBox()),
                 Expanded(
-                  flex: 3,
+                  flex: 7,
                   child: SizedBox(
                     child: Center(
                       child: Row(
@@ -72,13 +70,16 @@ class TopExpanded extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
-                  flex: 1,
+                  flex: 3,
                   child: SizedBox(
-                    child: Text('Horizontal Flex', style: titlesSide),
+                    child: Padding(
+                      padding: EdgeInsets.only(left: AppStyles.marginleft),
+                      child: Text('Horizontal Flex', style: textStyle),
+                    ),
                   ),
                 ),
                 Expanded(
-                  flex: 3,
+                  flex: 7,
                   child: SizedBox(
                     child: Row(
                       children: [
@@ -106,9 +107,9 @@ class TopExpanded extends StatelessWidget {
           Expanded(
             child: Row(
               children: [
-                Expanded(flex: 1, child: SizedBox()),
+                Expanded(flex: 3, child: SizedBox()),
                 Expanded(
-                  flex: 3,
+                  flex: 7,
                   child: SizedBox(
                     child: Center(
                       child: Row(
@@ -144,13 +145,16 @@ class TopExpanded extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
-                  flex: 1,
+                  flex: 3,
                   child: SizedBox(
-                    child: Text('Vertical Flex', style: titlesSide),
+                    child: Padding(
+                      padding: EdgeInsets.only(left: AppStyles.marginleft),
+                      child: Text('Vertical Flex', style: textStyle),
+                    ),
                   ),
                 ),
                 Expanded(
-                  flex: 3,
+                  flex: 7,
                   child: SizedBox(
                     child: Row(
                       children: [

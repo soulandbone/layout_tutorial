@@ -9,4 +9,5 @@ class AppStrings {
   static const kStart = 'start';
   static const kCenter = 'center';
   static const kEnd = 'end';
+  static const kPaddingExample = 'Padding Example';
 }
