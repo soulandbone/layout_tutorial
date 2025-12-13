@@ -17,7 +17,13 @@ class HeroScreen extends StatelessWidget implements HasLayoutGroup {
 
       body: CustomScrollView(
         slivers: [
-          SliverPersistentHeader(pinned: true, delegate: MyHeaderDelegate()),
+          SliverPersistentHeader(
+            pinned: true,
+            delegate: MyHeaderDelegate(
+              layoutGroup: LayoutGroup.scrollable,
+              layoutType: LayoutType.hero,
+            ),
+          ),
           SliverGrid(
             delegate: SliverChildBuilderDelegate((
               BuildContext context,
@@ -39,7 +45,3 @@ class HeroScreen extends StatelessWidget implements HasLayoutGroup {
     );
   }
 }
-
-
-
-//https://medium.com/litslink/flutter-customise-your-sliver-header-aa4fd86b64c7
