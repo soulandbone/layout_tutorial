@@ -3,10 +3,15 @@ import 'package:layout_tutorial/constants/app_colors.dart';
 import 'package:layout_tutorial/constants/layout_options.dart';
 
 class MyHeaderDelegate extends SliverPersistentHeaderDelegate {
-  MyHeaderDelegate({required this.layoutGroup, required this.layoutType});
+  MyHeaderDelegate({
+    required this.layoutGroup,
+    required this.layoutType,
+    required this.changeLayoutHandler,
+  });
 
   final LayoutGroup layoutGroup;
   final LayoutType layoutType;
+  final VoidCallback changeLayoutHandler;
 
   @override
   Widget build(
@@ -47,7 +52,7 @@ class MyHeaderDelegate extends SliverPersistentHeaderDelegate {
           right: 0,
           child: SafeArea(
             child: IconButton(
-              onPressed: () {},
+              onPressed: changeLayoutHandler,
               color: AppColors.burntSienna,
               icon: Icon(Icons.change_circle),
             ),

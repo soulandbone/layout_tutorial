@@ -33,7 +33,7 @@ class SliversScreen extends StatelessWidget implements HasLayoutGroup {
       appBar: MainAppBar(
         layoutType: LayoutType.slivers,
         layoutGroup: LayoutGroup.scrollable,
-        changeLayoutHandler: () {},
+        changeLayoutHandler: onLayoutToggle,
       ),
       body: Center(
         child: CustomScrollView(

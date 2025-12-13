@@ -20,6 +20,7 @@ class HeroScreen extends StatelessWidget implements HasLayoutGroup {
           SliverPersistentHeader(
             pinned: true,
             delegate: MyHeaderDelegate(
+              changeLayoutHandler: onLayoutToggle,
               layoutGroup: LayoutGroup.scrollable,
               layoutType: LayoutType.hero,
             ),
