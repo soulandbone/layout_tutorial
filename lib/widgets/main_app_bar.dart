@@ -37,5 +37,6 @@ class MainAppBar extends AppBar {
 
   final LayoutType layoutType;
   final VoidCallback changeLayoutHandler;
+
   final LayoutGroup layoutGroup;
 }
