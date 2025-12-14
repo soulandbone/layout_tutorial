@@ -15,14 +15,20 @@ class StackScreen extends StatefulWidget implements HasLayoutGroup {
 }
 
 class _StackScreenState extends State<StackScreen> {
-  double height = 120;
+  //**Size of the APPBAR VARIABLE */
+  double height = 200;
 
+  //STATE VARIABLES**************************************************
   double smallTop = 0;
   double smallLeft = 0;
+  double mediumTop = 0;
+  double mediumLeft = 0;
 
+  //**************************** SIZE OF THE CONTAINERS ****************************
   double smallestContainer = 100;
   double mediumContainer = 200;
   double largeContainer = 300;
+  // **************************END CONTAINERS SIZE *************************************
 
   void onChangeSmallTop(double value) {
     setState(() {
@@ -33,6 +39,18 @@ class _StackScreenState extends State<StackScreen> {
   void onChangeSmallLeft(double value) {
     setState(() {
       smallLeft = value;
+    });
+  }
+
+  void onChangeMediumTop(double value) {
+    setState(() {
+      mediumTop = value;
+    });
+  }
+
+  void onChangeMediumLeft(double value) {
+    setState(() {
+      mediumLeft = value;
     });
   }
 
@@ -47,9 +65,14 @@ class _StackScreenState extends State<StackScreen> {
         bottom: PreferredSize(
           preferredSize: Size(0, height),
           child: TopStack(
-            sliderLength: largeContainer - smallestContainer,
-            onChangeLeft: onChangeSmallLeft,
-            onChangeTop: onChangeSmallTop,
+            currentMediumLeft: mediumLeft,
+            currentMediumTop: mediumTop,
+            onChangeMediumLeft: onChangeMediumLeft,
+            onChangeMediumTop: onChangeMediumTop,
+            sliderLengthSmall: largeContainer - smallestContainer,
+            sliderLengthMedium: largeContainer - mediumContainer,
+            onChangeSmallLeft: onChangeSmallLeft,
+            onChangeSmallTop: onChangeSmallTop,
             height: height,
             currentSmallLeft: smallLeft,
             currentSmallTop: smallTop,
@@ -71,8 +94,8 @@ class _StackScreenState extends State<StackScreen> {
             ),
 
             Positioned(
-              //bottom: middleContainerBottom,
-              // right: middleContainerRight,
+              left: mediumLeft,
+              top: mediumTop,
               child: Container(
                 alignment: Alignment.bottomRight,
                 width: mediumContainer,
