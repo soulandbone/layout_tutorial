@@ -16,7 +16,7 @@ class StackScreen extends StatefulWidget implements HasLayoutGroup {
 
 class _StackScreenState extends State<StackScreen> {
   //**Size of the APPBAR VARIABLE */
-  double height = 200;
+  double height = 190;
 
   //STATE VARIABLES**************************************************
   double smallTop = 0;

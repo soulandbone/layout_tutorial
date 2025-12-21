@@ -10,4 +10,8 @@ class AppStrings {
   static const kCenter = 'center';
   static const kEnd = 'end';
   static const kPaddingExample = 'Padding Example';
+  static const kTopDistance = 'Top distance';
+  static const kLeftDistance = 'Left distance';
+  static const kTopContainer = 'Top Container';
+  static const kMiddleContainer = 'Middle Container';
 }

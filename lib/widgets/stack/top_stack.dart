@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:layout_tutorial/constants/app_strings.dart';
 
 class TopStack extends StatefulWidget {
   const TopStack({
@@ -35,66 +36,118 @@ class TopStack extends StatefulWidget {
 class _TopStackState extends State<TopStack> {
   @override
   Widget build(BuildContext context) {
+    double sliderHeight = 30;
+
     return SizedBox(
       height: widget.height,
       child: Column(
         children: [
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              AppStrings.kTopContainer,
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
           Row(
             children: [
-              Expanded(flex: 3, child: Text('Top distance')),
+              Expanded(
+                flex: 3,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Text(AppStrings.kTopDistance),
+                ),
+              ),
               Expanded(
                 flex: 7,
-                child: Slider(
-                  max: widget.sliderLengthSmall,
-                  value: widget.currentSmallTop,
-                  onChanged: (value) {
-                    widget.onChangeSmallTop(value);
-                  },
+                child: SizedBox(
+                  height: sliderHeight,
+                  child: Slider(
+                    max: widget.sliderLengthSmall,
+                    value: widget.currentSmallTop,
+                    onChanged: (value) {
+                      widget.onChangeSmallTop(value);
+                    },
+                  ),
                 ),
               ),
             ],
           ),
           Row(
             children: [
-              Expanded(flex: 3, child: Text('Left distance')),
+              Expanded(
+                flex: 3,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Text(AppStrings.kLeftDistance),
+                ),
+              ),
               Expanded(
                 flex: 7,
-                child: Slider(
-                  max: widget.sliderLengthSmall,
-                  value: widget.currentSmallLeft,
-                  onChanged: (value) {
-                    widget.onChangeSmallLeft(value);
-                  },
+                child: SizedBox(
+                  height: sliderHeight,
+                  child: Slider(
+                    max: widget.sliderLengthSmall,
+                    value: widget.currentSmallLeft,
+                    onChanged: (value) {
+                      widget.onChangeSmallLeft(value);
+                    },
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              AppStrings.kMiddleContainer,
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          Row(
+            children: [
+              Expanded(
+                flex: 3,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Text(AppStrings.kTopDistance),
+                ),
+              ),
+              Expanded(
+                flex: 7,
+                child: SizedBox(
+                  height: sliderHeight,
+                  child: Slider(
+                    max: widget.sliderLengthMedium,
+                    value: widget.currentMediumTop,
+                    onChanged: (value) {
+                      widget.onChangeMediumTop(value);
+                    },
+                  ),
                 ),
               ),
             ],
           ),
           Row(
             children: [
-              Expanded(flex: 3, child: Text('Top distance')),
               Expanded(
-                flex: 7,
-                child: Slider(
-                  max: widget.sliderLengthMedium,
-                  value: widget.currentMediumTop,
-                  onChanged: (value) {
-                    widget.onChangeMediumTop(value);
-                  },
+                flex: 3,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Text(AppStrings.kLeftDistance),
                 ),
               ),
-            ],
-          ),
-          Row(
-            children: [
-              Expanded(flex: 3, child: Text('Left distance')),
               Expanded(
                 flex: 7,
-                child: Slider(
-                  max: widget.sliderLengthMedium,
-                  value: widget.currentMediumLeft,
-                  onChanged: (value) {
-                    widget.onChangeMediumLeft(value);
-                  },
+                child: SizedBox(
+                  height: sliderHeight,
+                  child: Slider(
+                    max: widget.sliderLengthMedium,
+                    value: widget.currentMediumLeft,
+                    onChanged: (value) {
+                      widget.onChangeMediumLeft(value);
+                    },
+                  ),
                 ),
               ),
             ],
